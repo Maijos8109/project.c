@@ -1,7 +1,8 @@
  /*Program to find compound in a financial institution.
  it accepts principle, rate, number of compounding periods and time.
- Author: Josephmaitha8109
- Date of coding: 25th.september.2024*/
+ Author: Maijos8109
+ Ref No: CT101/G/22636/24
+ Date of coding: 25th.September.2024*/
 #include <stdio.h>
 #include <math.h>
 
@@ -11,8 +12,9 @@ int main(){
     float principal; //%f
     float time; //f
     float n; //%f
-    float Amount; //%f
     float rate; //%f
+    float Amount; //%f
+    float ci; //f
 
     printf("Enter your name \n");
     scanf("%s", &name);
@@ -29,10 +31,14 @@ int main(){
     printf("Enter rate\n");
     scanf("%f", &rate);
     printf("The rate is %f\n",rate);
-//Calculation of the compound interest
-    Amount = principal*pow((1+rate/n),n*time);
+//Calculation of the total amount
+    Amount = principal*pow((1+rate/100*n),n*time);
     rate = rate/100;
-    printf("Compound intrest is %.2f\n",Amount);
+    printf("Amount is %.2f\n", Amount);
+
+//calculation of compound interest
+  ci = Amount-principal;
+    printf("compound interest is %f", ci);
 
     return 0;
 }
